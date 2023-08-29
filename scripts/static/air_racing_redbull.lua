@@ -146,7 +146,7 @@ end
 
 world.addEventHandler(ev)
 
-missionCommands.addCommand('Show RedBull leaderboard', MISCroot, function()
+missionCommands.addCommand('Show RedBull leaderboard', nil, function()
 	local sorted = {}
 
 	for i,v in pairs(data.playerBest) do table.insert(sorted,{i,v}) end

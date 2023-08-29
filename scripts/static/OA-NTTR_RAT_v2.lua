@@ -43,7 +43,7 @@ local function SpawnRATGroup(alias, coalition, templates, departureNames, destin
    ratGrp:SetClimbRate(2500)
    --ratGrp:RadioFrequency(257.8)
    ratGrp:RespawnAfterLanding(15)
-   ratGrp:RadioMenuON()
+   --ratGrp:RadioMenuON()
    --ratGrp:_ATCQueue()
    
    

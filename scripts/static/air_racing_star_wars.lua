@@ -145,7 +145,7 @@ end
 
 world.addEventHandler(ev)
 
-missionCommands.addCommand('Show Star Wars leaderboard', MISCroot, function()
+missionCommands.addCommand('Show Star Wars leaderboard', nil, function()
 	local sorted = {}
 
 	for i,v in pairs(data.playerBest) do table.insert(sorted,{i,v}) end
