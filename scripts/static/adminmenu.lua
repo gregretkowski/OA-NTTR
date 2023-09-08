@@ -29,11 +29,11 @@ ADMIN.defaultMissionRestart = "MISSION_RESTART"
 ADMIN.defaultMissionLoad = "MISSION_LOAD"
 ADMIN.defaultMissionFile = "missions.lua"
 ADMIN.defaultMissionFolder = "missions"
-ADMIN.adminUnitName = "XX_" -- String to locate within unit name for admin slots
+ADMIN.adminUnitName = "ZZ_" -- String to locate within unit name for admin slots
 
-ADMIN.missionRestart = (JTF1.missionRestart and JTF1.missionRestart or ADMIN.defaultMissionRestart)
-ADMIN.missionLoad = (JTF1.missionLoad and JTF1.missionLoad or ADMIN.defaultMissionLoad)
-ADMIN.missionFile = (JTF1.missionFile and JTF1.missionFile or ADMIN.defaultMissionFile)
+ADMIN.missionRestart = (ADMIN.defaultMissionRestart)
+ADMIN.missionLoad = (ADMIN.defaultMissionLoad)
+ADMIN.missionFile = (ADMIN.defaultMissionFile)
 
 -- check if mission is in devmode.
 local devState = trigger.misc.getUserFlag(8888)
@@ -43,16 +43,16 @@ if devState == 1 then
 end
 
 -- check if a server config file has defined the path to the missions file.
-if JTF1.missionPath then
-  ADMIN.missionPath = JTF1.missionPath
-  BASE:T(ADMIN.missionPath)
-else
+--if JTF1.missionPath then
+--  ADMIN.missionPath = JTF1.missionPath
+--  BASE:T(ADMIN.missionPath)
+--else
   if lfs then -- check if game environment is desanitised
     ADMIN.missionPath = (lfs.writedir() .. "\\" .. ADMIN.defaultMissionFolder) -- set mission path to current write directory
   else
     ADMIN.missionPath = "" -- empty mission path will bypass all but restart mission menu option
   end
-end
+--end
 
 
 -- set full path to mission list
