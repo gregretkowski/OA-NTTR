@@ -113,5 +113,13 @@ local Tanker_C130J_Arco1 = SPAWN
      Arco1:CommandSetCallsign(2,1)
      end 
      )
-     
+
+local Tanker_LENIN_257 = SPAWN
+   :New( "LENIN_IL78M_01" )
+   :InitLimit( 1, 0 )
+   :InitRepeatOnLanding()
+   :InitRadioFrequency(257.0)
+   :SpawnScheduled( 15, 1 )
+
+
 env.info("Support Aircraft Complete", false)

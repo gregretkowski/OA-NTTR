@@ -16,7 +16,7 @@ BFMACM = {
   },
   adversary = {
     menu = { -- Adversary menu
-      {template = "ADV_F4", menuText = "Adversary A-4"},
+      {template = "ADV_F4", menuText = "Adversary F-4"},
       {template = "ADV_MiG28", menuText = "Adversary MiG-28"},
       {template = "ADV_Su27", menuText = "Adversary MiG-23"},
       {template = "ADV_MiG23", menuText = "Adversary Su-27"},

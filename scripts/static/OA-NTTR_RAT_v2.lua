@@ -41,6 +41,7 @@ local function SpawnRATGroup(alias, coalition, templates, departureNames, destin
    ratGrp:PlaceMarkers(false)
    ratGrp:TimeDestroyInactive(600)
    ratGrp:SetClimbRate(2500)
+   ratGrp:DestinationZone()
    --ratGrp:RadioFrequency(257.8)
    ratGrp:RespawnAfterLanding(15)
    --ratGrp:RadioMenuON()
@@ -80,7 +81,7 @@ local function SpawnRATGroup(alias, coalition, templates, departureNames, destin
     if (minFL ~= nil) then
       ratGrp:SetMinCruiseAltitude(minFL)
    end
-   
+  
    if (DestZone ~= nil) then
       ratGrp:DestinationZone()
    end
@@ -129,13 +130,12 @@ SetupRATGroup(
    civLargeTemplates, -- templates
    {"RAT_LAS_IB_SOUTH","RAT_LAS_IB_NORTHWEST", "RAT_LAS_IB_SOUTHEAST", "RAT_LAS_IB_NORTHEAST"}, -- departures
    {"McCarronDespawn"}, -- destinations
-   --{"McCarran_Despawn"}, -- destinations
    nil, -- terminal types
    nil, -- min distance
    nil, -- max distance
    10668, -- max FL (in meters)
    7925, -- min FL (in meters)
-   true, -- DestinationZone
+   nil, -- DestinationZone
    "air", -- SetTakeoff
    180, -- Spawn interval
    10 -- spawn count
@@ -152,7 +152,7 @@ SetupRATGroup(
    nil, -- max distance
    7620, -- max FL (in meters)
    6096, -- min FL (in meters)
-   true, -- DestinationZone
+   nil, -- DestinationZone
    "hot", -- SetTakeoff
    180, -- Spawn interval
    10 -- spawn count

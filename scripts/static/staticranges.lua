@@ -85,10 +85,10 @@ STATICRANGES.Ranges = {
     groups = {
       "63-01", "63-02", "63-03", "63-05", 
       "63-10", "63-12", "63-15", "R-63B Class A Range-01", 
-      "R-63B Class A Range-02",    
+      "R-63B Class A Range-02","R-63B Class A Range-3",    
     },
     units = {
-      "R63BWC", "R63BEC",
+      --"R63BWC", "R63BEC",
     },
     strafepits = {
       { --West strafepit
@@ -111,11 +111,11 @@ STATICRANGES.Ranges = {
     groups = {
       "64-10", "64-11", "64-13", "64-14", 
       "64-17", "64-19", "64-15", "64-05", 
-      "64-08", "64-09",
+      "64-08", "64-09", "R-64C Class A Range-1",
     },
     units = {
-      "64-12-05", "R64CWC", "R64CEC", "R-64C Class A Range-01", 
-      "R-64C Class A Range-02", 
+      "64-12-05", "R-64C Class A Range-01", 
+      "R-64C Class A Range-02", --"R64CWC", "R64CEC",
     },
     strafepits = {
       {-- West strafepit
@@ -155,7 +155,7 @@ function STATICRANGES:AddStaticRanges(TableRanges)
     local rangeObject = "Range_" .. rangeData.rangeId
     
     self[rangeObject] = RANGE:New(rangeData.rangeName)
-      self[rangeObject]:DebugOFF()  
+      self[rangeObject]:DebugON()  
       self[rangeObject]:SetRangeZone(ZONE_POLYGON:FindByName(rangeData.rangeZone))
       self[rangeObject]:SetMaxStrafeAlt(self.Defaults.strafeMaxAlt)
       self[rangeObject]:SetDefaultPlayerSmokeBomb(false)
