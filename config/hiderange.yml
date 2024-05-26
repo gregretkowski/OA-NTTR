@@ -25,6 +25,8 @@ ranges:
       - PA2964
       - PA2896
       - PB2507
+    exclude_patterns:
+      - ^Vehicle(s?)6208-.*$
   "63-65":
     polygon:
       - PA2964
