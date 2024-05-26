@@ -19,7 +19,6 @@ def find_dcs_directory():
             return candidate_dcs_path
     raise ValueError("Cannot find DCS saved games directory")
 
-
 def get_dcs_missions_dir():
     dcs_dir = find_dcs_directory()
     missions_dir = os.path.join(dcs_dir, 'Missions')
@@ -44,10 +43,8 @@ def deep_merge(dict1, dict2):
             result[key] = value
     return result
     
-
 def canonical_path(p):
     return os.path.normpath(os.path.abspath(p))
-
 
 def main():
     parser = argparse.ArgumentParser(
@@ -58,13 +55,12 @@ def main():
     command_group.add_argument(
         '--pack',
         action='store_true',
-        help='Pack the miz file and copy to DCS saved games dir')
-
+        help='Pack the miz contents in the git repo and copy to DCS saved games dir')
     command_group.add_argument(
         '--unpack',
         action='store_true',
         help='Extract the contents of the miz file from the DCS saved ' +
-        'games dir to the local repo.')
+        'games dir to the local git repo.')
     command_group.add_argument(
         '--setversion',
         action='store_true',
@@ -123,6 +119,7 @@ def main():
         try:
             import git
         except ImportError:
+            print("Cannot import git, there will be no warning for uncommitted changes. - try 'pip install python-git'")
             pass
         else:
             repo = git.Repo(os.getcwd())
@@ -132,6 +129,7 @@ def main():
                     " before unpacking mission.")
                 exit(-1)
 
+        print(f"Unpacking {miz_in_missions_dir} to {miz_fullname}")
         if miz_in_missions_dir != miz_fullname:
             shutil.copyfile(src=miz_in_missions_dir, dst=miz_fullname)
             shutil.unpack_archive(miz_fullname, miz_subdir, format='zip')
