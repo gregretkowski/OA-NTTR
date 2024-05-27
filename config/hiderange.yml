@@ -43,6 +43,9 @@ ranges:
       - NA9495
       - PA2895
       - PA2964
+    exclude_patterns:
+      - R-63B Class A Range-3
+      - R-64C Class A Range-1
 
   #"Ranges 64-65":
   #  polygon:
