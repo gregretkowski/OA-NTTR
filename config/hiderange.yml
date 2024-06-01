@@ -14,6 +14,8 @@ ranges:
   #    - PA2996
   #    - PB2507
   "61-62":
+    # Can set 'enabled' false
+    enabled: true
     polygon:
       - PB2527
       - PB5027
@@ -27,7 +29,35 @@ ranges:
       - PB2507
     exclude_patterns:
       - ^Vehicle(s?)6208-.*$
+  "63B":
+    # Just leave 63B in, see if that helps with bomb scoring
+    enabled: false
+    polygon:
+      - PA294644
+      - PA517648
+      - PA521333
+      - PA448333
+      - PA273467
+    exclude_patterns:
+      - R-63B Class A Range-3
+  "64-65":
+    polygon:
+      - NB948064
+      - NB456067
+      - PA289961
+      - PA294644
+      - PA272468
+      - PA236497
+      - PA237521
+      - PA076518
+      - PA093493
+      - NA996492
+      - NA953510
+    #exclude_patterns:
+    #  - R-64C Class A Range-1
   "63-65":
+    # I split these two out - see config elsewhere.
+    enabled: false
     polygon:
       - PA2964
       - PA3464
@@ -62,6 +92,9 @@ ranges:
       - NV51
       - NV01
   "Range 74":
+    special_groups:
+      - "SAM"
+    # dont_rename: true
     polygon:
       - NB6056
       - NB7172
@@ -71,6 +104,9 @@ ranges:
       - NB8824
       - NB6024
   "Ranges 75-76":
+    special_groups:
+      - "SAM"
+    # dont_rename: true
     polygon:
       - MB9155
       - NB6056

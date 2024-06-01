@@ -3,9 +3,10 @@ name: Build mission package
 on:
   push:
     branches:
-    #  - main
-    #  - master
+      - main
+      - master
       - prerel
+
 
 jobs:
   build:
@@ -24,12 +25,18 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y%m%d-%H%M')"
 
-      - name: Run version script
-        run: python miztool.py OA-NTTR --setversion --version v${{ steps.date.outputs.date }} -d out
+      - name: Install dependencies
+        run: pip install pyyaml slpp 
+
+      - name: Run variants script
+        run: python miztool.py --makevariants --version v${{ steps.date.outputs.date }} -d out
+
+      - name: Run briefing script
+        run: python miztool.py --setbriefing --version v${{ steps.date.outputs.date }} -d out
 
       - name: Run extract script
-        run: python miztool.py OA-NTTR --pack -d out
-        
+        run: python miztool.py --pack -d out
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:

@@ -1,12 +1,16 @@
+#!/usr/bin/env python3
+import argparse
+from glob import glob
 import os
 import shutil
-from glob import glob
-import argparse
+import yaml
 
+from slpp import slpp as lua
 
-#miz_subdir = 'OA-NTTR'
-#mizname = 'OA-NTTR'
-
+# 'config/__init__.py' contains the config for this tool.
+from config import config
+mizname = config['mizname']
+miz_subdir = config['miz_subdir']
 
 def find_dcs_directory():
     home = os.environ['USERPROFILE']
@@ -24,14 +28,6 @@ def get_dcs_missions_dir():
     missions_dir = os.path.join(dcs_dir, 'Missions')
     return missions_dir
 
-def load_variant_config(self):
-    with open('config/variants.yml') as f:
-        self.config = yaml.safe_load(f)
-        mission['mission'] = self.deep_merge(mission['mission'],val)
-
-def create_variants(self):
-    pass
-
 def deep_merge(dict1, dict2):
     # Deep merge two dictionaries
     result = dict1.copy()
@@ -39,7 +35,7 @@ def deep_merge(dict1, dict2):
         if key in result and isinstance(result[key], dict) and isinstance(value, dict):            
             result[key] = deep_merge(result[key], value)
         else:
-            self.logger.debug("merge repleace key %s value %s with %s" % (key, result[key], value))
+            #self.logger.debug("merge repleace key %s value %s with %s" % (key, result[key], value))
             result[key] = value
     return result
     
@@ -49,8 +45,7 @@ def canonical_path(p):
 def main():
     parser = argparse.ArgumentParser(
         description='Pack/unpack DCS mission from/to the git repo.')
-    
-    parser.add_argument('mizname', help='Name of the mission file/directory. ex: OA-NTTR, OA-Caucusus-Bactria')
+
     command_group = parser.add_mutually_exclusive_group(required=True)
     command_group.add_argument(
         '--pack',
@@ -62,16 +57,28 @@ def main():
         help='Extract the contents of the miz file from the DCS saved ' +
         'games dir to the local git repo.')
     command_group.add_argument(
-        '--setversion',
+        '--setbriefing',
         action='store_true',
-        help='Updates dictionary to set a version string')
+        help='Updates dictionary to set the briefing')
+    command_group.add_argument(
+        '--makevariants',
+        action='store_true',
+        help='Creates wx variants of the mission')
     parser.add_argument(
         '-v',
         '--version',
         nargs='?',
         #const=os.getcwd(),
-        default=None,
+        default="DEV",
         help="Sets the version string")
+    
+    parser.add_argument(
+        '-m',
+        '--variant',
+        nargs='?',
+        #const=os.getcwd(),
+        default="all",
+        help="selects which variant to create")
     parser.add_argument(
         '-d',
         '--directory',
@@ -86,9 +93,6 @@ def main():
         default=False,
         help='Overwrite uncommitted changes when unpacking the mission')
     args = parser.parse_args()
-
-    mizname = args.mizname
-    miz_subdir = args.mizname
 
     miz_fullname = mizname + '.miz'
     miz_fullpath = canonical_path(miz_fullname)
@@ -115,6 +119,7 @@ def main():
             shutil.copyfile(dst=miz_in_missions_dir, src=miz_fullpath)
             os.remove(miz_local)
 
+
     def unpack():
         try:
             import git
@@ -135,26 +140,71 @@ def main():
             shutil.unpack_archive(miz_fullname, miz_subdir, format='zip')
             os.remove(miz_local)
 
-    def setversion():
-        if args.version is None:
-            print("No version specified, skipping")
-            return
-        else:
-            version = args.version
-            print(f"Setting version to {version}")
-            for filename in glob(f"{miz_subdir}/l10n/DEFAULT/dictionary", recursive=True):
+
+    def setbriefing(version=None,miz_local_subdir=None):
+            if miz_local_subdir is None:
+                miz_local_subdir = miz_subdir
+            if version is None:
+                version = args.version
+            #print(glob(f"{miz_local_subdir}/l10n/DEFAULT/dictionary", recursive=True))
+            with open('briefing.md', 'r') as file:
+                briefing_str = file.read()
+                briefing = briefing_str.replace('|PRERELEASE|', version).replace("\n","\\\n")
+            for filename in glob(f"{miz_local_subdir}/l10n/DEFAULT/dictionary", recursive=True):
                 with open(filename, 'r') as file:
                     filedata = file.read()
-                filedata = filedata.replace('|PRERELEASE|', version)
-
+                    dictionary = lua.decode("{" + filedata + "}")
+                    for dict_key in dictionary['dictionary'].keys():
+                        if dict_key.startswith("DictKey_descriptionText"):
+                            dictionary['dictionary'][dict_key] = briefing
                 with open(filename, 'w') as file:
-                    file.write(filedata)
+                    dictionary_string = f"dictionary = " + lua.encode(dictionary['dictionary'])
+                    file.write(dictionary_string)
+
+
+    def makevariants():
+        # read yaml file variants
+        with open('config/variants.yml') as f:
+            config = yaml.safe_load(f)
+
+        for key,val in config.items():
+            if args.variant != "all" and args.variant != key:
+                continue
+            print(f"Processing variant {key}")
+            variant_subdir = miz_subdir + "_" + key
+            variant_mizname = mizname  + "_" + key
+
+            # DESTRUCTIVE
+            shutil.copytree(miz_subdir, variant_subdir, dirs_exist_ok=True)
+            with open(variant_subdir+'/mission','r',encoding='UTF8') as mizfile:
+                    mission_string = mizfile.read()
+            mission = lua.decode("{" + mission_string + "}")
+            mission['mission'] = deep_merge(mission['mission'],val)
+            with open(variant_subdir+'/mission','w',encoding='UTF8') as mizfile:
+                mission_string = "mission = " + lua.encode(mission['mission'])
+                mizfile.write(mission_string)
+
+            version_string = f"{args.version}:{key}"
+            setbriefing(version=version_string,miz_local_subdir=variant_subdir)
+
+            variant_mizfile = missions_dir + "/" + variant_mizname + ".miz"
+            shutil.make_archive(variant_mizfile, format='zip', root_dir=variant_subdir)
+            if os.path.exists(variant_mizfile):
+                os.remove(variant_mizfile)
+            shutil.move(variant_mizfile+'.zip', variant_mizfile)
+
+
+
     if args.pack:
         pack()
     elif args.unpack:
         unpack()
-    elif args.setversion:
-        setversion()
+    #elif args.setversion:
+    #    setversion()
+    elif args.setbriefing:
+        setbriefing()
+    elif args.makevariants:
+        makevariants()
     else:
         assert (False)
 

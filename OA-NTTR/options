@@ -318,6 +318,17 @@ options =
             ["VAICOMClientIP"] = "127.0.0.1",
             ["AIRIODisableWheel"] = false,
         }, -- end of ["VAICOM"]
+        ["Hercules"] = 
+        {
+            ["NWS_Coupled_Separate_Input_Device"] = false,
+        }, -- end of ["Hercules"]
+        ["DCS-SRS"] = 
+        {
+            ["srsOverlayHelpTextEnabled"] = false,
+            ["srsOverlayEnabled"] = true,
+            ["srsAutoLaunchEnabled"] = true,
+            ["srsOverlayCompactModeEnabled"] = true,
+        }, -- end of ["DCS-SRS"]
         ["CA"] = 
         {
             ["kompass_options"] = 1,
@@ -329,17 +340,6 @@ options =
             ["ground_automatic"] = true,
             ["automatic_clutch"] = true,
         }, -- end of ["CA"]
-        ["DCS-SRS"] = 
-        {
-            ["srsOverlayHelpTextEnabled"] = false,
-            ["srsOverlayEnabled"] = true,
-            ["srsAutoLaunchEnabled"] = true,
-            ["srsOverlayCompactModeEnabled"] = true,
-        }, -- end of ["DCS-SRS"]
-        ["Hercules"] = 
-        {
-            ["NWS_Coupled_Separate_Input_Device"] = false,
-        }, -- end of ["Hercules"]
         ["Su-33"] = 
         {
             ["CPLocalList"] = "default",
