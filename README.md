@@ -4,7 +4,7 @@ Range template from 476th vFG
 To get the mission download from the "[Releases](https://github.com/VFA-192-GOLDEN-DRAGONS/OA-NTTR/releases)" tab. this will give you
 the latest version.
 
-See the [Briefing](breifing.md) for more specifics about the mission. 
+See the [Briefing](briefing.md) for more specifics about the mission. 
 
 ## Development Workflow
 
@@ -30,15 +30,15 @@ To work on this mission you will need DCS, git, and a python enterpreter. The mi
 in git as individual files -- not so much for diff'ability but because otherwise each
 commit increases the overall git repo size by the size of the miz file.
 
-To develop on this, you'll run `extract.py` which will create a `miz` file in your DCS
+To develop on this, you'll run `miztool.py` which will create a `miz` file in your DCS
 Missions directory:
 
-    python extract.py --pack
+    python miztool.py --pack
 
 Make all your edits via the DCS Mission Editor - once you are ready, sync the changes back into the repo, commit and push.
 
-    python extract.py --unpack
-    git add OA-Caucusus-Bactria
+    python miztool.py --unpack
+    git add OA-NTTR
     git commit -m "My awesome changes"
     git push origin my-topic-branch
 
