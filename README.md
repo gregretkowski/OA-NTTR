@@ -4,7 +4,10 @@ Range template from 476th vFG
 To get the mission download from the "[Releases](https://github.com/VFA-192-GOLDEN-DRAGONS/OA-NTTR/releases)" tab. this will give you
 the latest version.
 
-See the [Briefing](briefing.md) for more specifics about the mission. 
+See the [In-Mission Briefing](briefing.md) for more specifics about the mission. 
+
+The [Briefing Slide-Deck](https://docs.google.com/presentation/d/1_3V9OukroGKVx1U4lp2VjX9xQ4PAinb6OBZkA3OrtIE/edit#slide=id.p)
+contains more details on the mission.
 
 ## Development Workflow
 
@@ -55,8 +58,10 @@ make a PR and merge the branch to create the release.
 * ~~fix SEAD hot-starts to have SEAD loadouts~~
 * remove 'activeranges' script??
 * ~~tanker tacans Y>X docs/map~~
-* update my 'git remote' to the OA one
+* ~~update my 'git remote' to the OA one~~
 * waypoints shown in the briefing are wrong vs the jet
+* ~~Unhide all blue range targets so scoring works.. but hide red units.~~
+* ~~adjust 'hide' 55/64 as jtacs for 65 are in 64.~~
 
 
 #### May be re-do items if I start again with old menu

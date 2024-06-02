@@ -14,8 +14,10 @@ ranges:
   #    - PA2996
   #    - PB2507
   "61-62":
+    template: "!?GroundRanges?*%s*! "
     # Can set 'enabled' false
     enabled: true
+    hide_blue: false
     polygon:
       - PB2527
       - PB5027
@@ -30,8 +32,10 @@ ranges:
     exclude_patterns:
       - ^Vehicle(s?)6208-.*$
   "63B":
+    template: "!?GroundRanges?*%s*! "
     # Just leave 63B in, see if that helps with bomb scoring
-    enabled: false
+    enabled: true
+    hide_blue: false
     polygon:
       - PA294644
       - PA517648
@@ -41,6 +45,8 @@ ranges:
     exclude_patterns:
       - R-63B Class A Range-3
   "64-65":
+    template: "!?GroundRanges?*%s*! "
+    hide_blue: false
     polygon:
       - NB948064
       - NB456067
@@ -56,8 +62,10 @@ ranges:
     #exclude_patterns:
     #  - R-64C Class A Range-1
   "63-65":
+    template: "!?GroundRanges?*%s*! "
     # I split these two out - see config elsewhere.
     enabled: false
+    hide_blue: false
     polygon:
       - PA2964
       - PA3464
@@ -73,9 +81,9 @@ ranges:
       - NA9495
       - PA2895
       - PA2964
-    exclude_patterns:
-      - R-63B Class A Range-3
-      - R-64C Class A Range-1
+    #exclude_patterns:
+    #  - R-63B Class A Range-3
+    #  - R-64C Class A Range-1
 
   #"Ranges 64-65":
   #  polygon:
@@ -85,7 +93,8 @@ ranges:
   #    - PA2752
   #    - NA9552
   "Range 66":
-  # AKA Leach Lake
+    # AKA Leach Lake
+    template: "!?GroundRanges?*%s*! "
     polygon:
       - NV05
       - NV55
@@ -104,6 +113,7 @@ ranges:
       - NB8824
       - NB6024
   "Ranges 75-76":
+    template: "!?GroundRanges?*%s*! "
     special_groups:
       - "SAM"
     # dont_rename: true
