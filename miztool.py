@@ -187,6 +187,12 @@ def main():
             version_string = f"{args.version}:{key}"
             setbriefing(version=version_string,miz_local_subdir=variant_subdir)
 
+            # replace mission file name - so server resets work.
+            with open(variant_subdir+'/mission','r',encoding='UTF8') as mizfile:
+                mission_string = mizfile.read().replace(mizname+".miz",variant_mizname+".miz")
+            with open(variant_subdir+'/mission','w',encoding='UTF8') as mizfile:
+                mizfile.write(mission_string)
+
             variant_mizfile = missions_dir + "/" + variant_mizname + ".miz"
             shutil.make_archive(variant_mizfile, format='zip', root_dir=variant_subdir)
             if os.path.exists(variant_mizfile):

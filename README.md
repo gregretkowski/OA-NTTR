@@ -59,9 +59,11 @@ make a PR and merge the branch to create the release.
 * remove 'activeranges' script??
 * ~~tanker tacans Y>X docs/map~~
 * ~~update my 'git remote' to the OA one~~
-* waypoints shown in the briefing are wrong vs the jet
+* ~~waypoints shown in the briefing are wrong vs the jet~~
 * ~~Unhide all blue range targets so scoring works.. but hide red units.~~
 * ~~adjust 'hide' 55/64 as jtacs for 65 are in 64.~~
+* get NTTR template into DCS-MDC
+* ~~make it so that _variants_ will load the right .miz file name on server reset~~
 
 
 #### May be re-do items if I start again with old menu

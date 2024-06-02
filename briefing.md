@@ -29,16 +29,17 @@ Radio presets are per NELLISAFBI-11-250
 Default waypoints for all aircraft are;
 
 - 1: FLEX
-- 2: JUNNO
-- 3: DREAM
-- 4: STUDENT GAP
-- 5: BELTED PK
-- 6: GARTH
-- 7: FLUSH
-- 8: JAYSN
-- 9: STRYK
-- 10: GASS PK
-- 11: APEX
+- 2: FYTTR
+- 3: JUNNO
+- 4: DREAM
+- 5: STUDENT GAP
+- 6: BELTED PK
+- 7: GARTH
+- 8: FLUSH
+- 9: JAYSN
+- 20: STRYK
+- 11: GASS PK
+- 12: APEX
 
 See mission kneeboard for comms, navigation and range info.
 
