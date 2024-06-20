@@ -1,4 +1,5 @@
-Welcome to the JTF-1 NTTR Fun Map!
+Welcome to One Actual NTTR!
+|PRERELEASE| 
 Range template from 476th vFG
 
 
@@ -28,16 +29,17 @@ Radio presets are per NELLISAFBI-11-250
 Default waypoints for all aircraft are;
 
 - 1: FLEX
-- 2: JUNNO
-- 3: DREAM
-- 4: STUDENT GAP
-- 5: BELTED PK
-- 6: GARTH
-- 7: FLUSH
-- 8: JAYSN
-- 9: STRYK
-- 10: GASS PK
-- 11: APEX
+- 2: FYTTR
+- 3: JUNNO
+- 4: DREAM
+- 5: STUDENT GAP
+- 6: BELTED PK
+- 7: GARTH
+- 8: FLUSH
+- 9: JAYSN
+- 20: STRYK
+- 11: GASS PK
+- 12: APEX
 
 See mission kneeboard for comms, navigation and range info.
 
@@ -65,19 +67,19 @@ TANKERS
 =======
 
 Track R-641A
-- HI, TEXACO 1-1 [KC-135] 31Y, 295.400, FL230-250
-- LO, SHELL 1-1 [KC-135MPRS] 35Y, 276.100, FL180-210
+- HI, TEXACO 1-1 [KC-135] 31X, 295.400, FL230-250
+- LO, SHELL 1-1 [KC-135MPRS] 35X, 276.100, FL180-210
 
-AR-635 
-- HI, TEXACO 2-1 [KC-135] 52Y, 352.600, FL230-250
-- LO, SHELL 2-1 [KC-135MPRS] 34Y, 317.775, F180-210
+AR-635
+- HI, TEXACO 2-1 [KC-135] 52X, 352.600, FL230-250
+- LO, SHELL 2-1 [KC-135MPRS] 34X, 317.775, F180-210
 
-ARLNS 
-- HI, TEXACO 3-1 [KC-135] 51Y, 324.050, FL240-330
+ARLNS
+- HI, TEXACO 3-1 [KC-135] 51X, 324.050, FL240-330
 - LO, SHELL 3-1 [KC-135MPRS] 33Y, 319.800, F210-260
 
 AR-230V
-- ARCO 1-1 [KC-135] 30Y, 343.600, FL150 [215kts IAS]
+- ARCO 1-1 [KC-135] 30X, 343.600, FL150 [215kts IAS]
 - ARCO 3-1 [KC-130] 29Y, 323.200, FL100
 
 
@@ -94,9 +96,10 @@ While enabled, the missile trainer will;
 
 NOTE: At very high closure rates it may not be possible to destroy the incoming missile without causing (potentially catastrophic) damage to your aircraft. The missile trainer will not protect against cannon rounds or other balistic weapons.
 
-
 STATIC RANGES
 =============
+
+Use the Comms 'GroundRanges' menu to activate most ranges
 
 The following ranges are populated with multiple static targets; 61B, 62A, 62B, 63B, 64A, 64B, 64C, 65C, 65D and 74C. Each target contains one or more DMPI. See the in-game kneeboard for target data.
 

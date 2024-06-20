@@ -1,0 +1,131 @@
+---
+
+terrain: NTTR
+prefix: 11S
+ranges:
+  #"Ranges 61-63":
+  #  polygon:
+  #    - PB2527
+  #    - PB5027
+  #    - PA5233
+  #    - PA4433
+  #    - PA2746
+  #    - PA2964
+  #    - PA2996
+  #    - PB2507
+  "61-62":
+    template: "!?GroundRanges?*%s*! "
+    # Can set 'enabled' false
+    enabled: true
+    hide_blue: false
+    polygon:
+      - PB2527
+      - PB5027
+      - PA5164
+      - PA4064
+      - PA4068
+      - PA3468
+      - PA3464
+      - PA2964
+      - PA2896
+      - PB2507
+    exclude_patterns:
+      - ^Vehicle(s?)6208-.*$
+  "63B":
+    template: "!?GroundRanges?*%s*! "
+    # Just leave 63B in, see if that helps with bomb scoring
+    enabled: true
+    hide_blue: false
+    polygon:
+      - PA294644
+      - PA517648
+      - PA521333
+      - PA448333
+      - PA273467
+    exclude_patterns:
+      - R-63B Class A Range-3
+  "64-65":
+    template: "!?GroundRanges?*%s*! "
+    hide_blue: false
+    polygon:
+      - NB948064
+      - NB456067
+      - PA289961
+      - PA294644
+      - PA272468
+      - PA236497
+      - PA237521
+      - PA076518
+      - PA093493
+      - NA996492
+      - NA953510
+    #exclude_patterns:
+    #  - R-64C Class A Range-1
+  "63-65":
+    template: "!?GroundRanges?*%s*! "
+    # I split these two out - see config elsewhere.
+    enabled: false
+    hide_blue: false
+    polygon:
+      - PA2964
+      - PA3464
+      - PA3468
+      - PA4068
+      - PA4064
+      - PA5164
+      - PA5233
+      - PA4433
+      - PA2746
+      - PA2752
+      - NA9552
+      - NA9495
+      - PA2895
+      - PA2964
+    #exclude_patterns:
+    #  - R-63B Class A Range-3
+    #  - R-64C Class A Range-1
+
+  #"Ranges 64-65":
+  #  polygon:
+  #    - NA9495
+  #    - PA2895
+  #    - PA2964
+  #    - PA2752
+  #    - NA9552
+  "Range 66":
+    # AKA Leach Lake
+    template: "!?GroundRanges?*%s*! "
+    polygon:
+      - NV05
+      - NV55
+      - NV51
+      - NV01
+  "Range 74":
+    special_groups:
+      - "SAM"
+    # dont_rename: true
+    polygon:
+      - NB6056
+      - NB7172
+      - NB9872
+      - NB9847
+      - NB8847
+      - NB8824
+      - NB6024
+  "Ranges 75-76":
+    template: "!?GroundRanges?*%s*! "
+    special_groups:
+      - "SAM"
+    # dont_rename: true
+    polygon:
+      - MB9155
+      - NB6056
+      - NB6037
+      - NB1430
+      - NB1424
+      - NB6024
+      - MB9343
+
+  
+
+
