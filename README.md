@@ -54,7 +54,7 @@ make a PR and merge the branch to create the release.
 * ~~fix spawnable (ACTIVE_) SAM's in 7X ranges~~
 * ~~fix up F18 radios using radio script~~
 * Add more F16 air-starts (there are already SEAD air starts?)
-* figure out why bombing/target-scoring is broken
+* ~~figure out why bombing/target-scoring is broken~~
 * ~~fix SEAD hot-starts to have SEAD loadouts~~
 * remove 'activeranges' script??
 * ~~tanker tacans Y>X docs/map~~

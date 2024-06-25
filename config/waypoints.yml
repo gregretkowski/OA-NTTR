@@ -1,0 +1,551 @@
+F-4E-45MC:
+  1:
+    ETA: 0
+    ETA_locked: true
+    action: From Parking Area
+    airdromeId: 4
+    alt: 563
+    alt_type: BARO
+    formation_template: ''
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks:
+          1:
+            auto: true
+            enabled: true
+            id: EngageTargets
+            key: CAP
+            number: 1
+            params:
+              priority: 0
+              targetTypes:
+                1: Air
+          2:
+            auto: true
+            enabled: true
+            id: WrappedAction
+            number: 2
+            params:
+              action:
+                id: Option
+                params:
+                  name: 17
+                  value: true
+          3:
+            auto: true
+            enabled: true
+            id: WrappedAction
+            number: 3
+            params:
+              action:
+                id: Option
+                params:
+                  name: 18
+                  value: 4
+          4:
+            auto: true
+            enabled: true
+            id: WrappedAction
+            number: 4
+            params:
+              action:
+                id: Option
+                params:
+                  name: 19
+                  value: true
+          5:
+            auto: true
+            enabled: true
+            id: WrappedAction
+            number: 5
+            params:
+              action:
+                id: Option
+                params:
+                  name: 21
+                  noTargetTypes:
+                    1: Fighters
+                    2: Multirole fighters
+                    3: Bombers
+                    4: Helicopters
+                    5: UAVs
+                    6: Infantry
+                    7: Fortifications
+                    8: Tanks
+                    9: IFV
+                    10: APC
+                    11: Artillery
+                    12: Unarmed vehicles
+                    13: AAA
+                    14: SR SAM
+                    15: MR SAM
+                    16: LR SAM
+                    17: Aircraft Carriers
+                    18: Cruisers
+                    19: Destroyers
+                    20: Frigates
+                    21: Corvettes
+                    22: Light armed ships
+                    23: Unarmed ships
+                    24: Submarines
+                    25: Cruise missiles
+                    26: Antiship Missiles
+                    27: AA Missiles
+                    28: AG Missiles
+                    29: SA Missiles
+                  targetTypes: {}
+                  value: none;
+    type: TakeOffParking
+    x: -398843.0625
+    y: -18473.505859375
+  2:
+    ETA: 64.207707457986
+    ETA_locked: false
+    action: Turning Point
+    alt: 2290
+    alt_type: BARO
+    formation_template: ''
+    name: FLEX
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -389880.44799168
+    y: -17981.467834993
+  3:
+    ETA: 486.7965726442
+    ETA_locked: false
+    action: Turning Point
+    alt: 9149
+    alt_type: BARO
+    formation_template: ''
+    name: FYTTR
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -385641.70091223
+    y: -76521.106474882
+  4:
+    ETA: 1088.661477855
+    ETA_locked: false
+    action: Turning Point
+    alt: 3842
+    alt_type: BARO
+    formation_template: ''
+    name: JUNNO
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -343002.94220722
+    y: -4621.0585527032
+  5:
+    ETA: 1449.3475483277
+    ETA_locked: false
+    action: Turning Point
+    alt: 3421
+    alt_type: BARO
+    formation_template: ''
+    name: DREAM
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -294158.29661546
+    y: -15744.836386741
+  6:
+    ETA: 1801.4241457713
+    ETA_locked: false
+    action: Turning Point
+    alt: 4955
+    alt_type: BARO
+    formation_template: ''
+    name: STUDENT GAP
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -245278.15336103
+    y: -14368.109256334
+  7:
+    ETA: 2508.1982826694
+    ETA_locked: false
+    action: Turning Point
+    alt: 7731
+    alt_type: BARO
+    formation_template: ''
+    name: BELTED PK
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -251880.87765084
+    y: -112308.87319469
+  8:
+    ETA: 2786.1512650839
+    ETA_locked: false
+    action: Turning Point
+    alt: 6760
+    alt_type: BARO
+    formation_template: ''
+    name: GARTH
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -281740.24071199
+    y: -136777.87610336
+  9:
+    ETA: 3147.9684705874
+    ETA_locked: false
+    action: Turning Point
+    alt: 4030
+    alt_type: BARO
+    formation_template: ''
+    name: FLUSH
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -331959.39652166
+    y: -134950.56780238
+  10:
+    ETA: 3437.8137563462
+    ETA_locked: false
+    action: Turning Point
+    alt: 3415
+    alt_type: BARO
+    formation_template: ''
+    name: JAYSN
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -362014.55406617
+    y: -108168.92549879
+  11:
+    ETA: 3798.5806245162
+    ETA_locked: false
+    action: Turning Point
+    alt: 4640
+    alt_type: BARO
+    formation_template: ''
+    name: STRYK
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -377691.96144395
+    y: -60578.15760223
+  12:
+    ETA: 4014.3431052549
+    ETA_locked: false
+    action: Turning Point
+    alt: 6646
+    alt_type: BARO
+    formation_template: ''
+    name: GASS PEAK
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -379927.46101919
+    y: -30694.645380085
+  13:
+    ETA: 4194.1842767309
+    ETA_locked: false
+    action: Turning Point
+    alt: 2364
+    alt_type: BARO
+    formation_template: ''
+    name: APEX
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -384142.56043126
+    y: -6074.9287345217
+FA-18C_hornet:
+  1:
+    ETA: 0
+    ETA_locked: true
+    action: From Parking Area
+    airdromeId: 4
+    alt: 563
+    alt_type: BARO
+    formation_template: ''
+    name: NELLIS
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks:
+          1:
+            auto: true
+            enabled: true
+            id: EngageTargets
+            key: CAP
+            number: 1
+            params:
+              priority: 0
+              targetTypes:
+                1: Air
+          2:
+            auto: true
+            enabled: true
+            id: WrappedAction
+            number: 2
+            params:
+              action:
+                id: EPLRS
+                params:
+                  groupId: 4
+                  value: true
+    type: TakeOffParking
+    x: -399200.46875
+    y: -18636.890625
+  2:
+    ETA: 64.207707457986
+    ETA_locked: false
+    action: Turning Point
+    alt: 2290
+    alt_type: BARO
+    formation_template: ''
+    name: FLEX
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -389880.44799168
+    y: -17981.467834993
+  3:
+    ETA: 486.7965726442
+    ETA_locked: false
+    action: Turning Point
+    alt: 9149
+    alt_type: BARO
+    formation_template: ''
+    name: FYTTR
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -385641.70091223
+    y: -76521.106474882
+  4:
+    ETA: 1088.661477855
+    ETA_locked: false
+    action: Turning Point
+    alt: 3842
+    alt_type: BARO
+    formation_template: ''
+    name: JUNNO
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -343002.94220722
+    y: -4621.0585527032
+  5:
+    ETA: 1449.3475483277
+    ETA_locked: false
+    action: Turning Point
+    alt: 3421
+    alt_type: BARO
+    formation_template: ''
+    name: DREAM
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -294158.29661546
+    y: -15744.836386741
+  6:
+    ETA: 1801.4241457713
+    ETA_locked: false
+    action: Turning Point
+    alt: 4955
+    alt_type: BARO
+    formation_template: ''
+    name: STUDENT GAP
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -245278.15336103
+    y: -14368.109256334
+  7:
+    ETA: 2508.1982826694
+    ETA_locked: false
+    action: Turning Point
+    alt: 7731
+    alt_type: BARO
+    formation_template: ''
+    name: BELTED PK
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -251880.87765084
+    y: -112308.87319469
+  8:
+    ETA: 2786.1512650839
+    ETA_locked: false
+    action: Turning Point
+    alt: 6760
+    alt_type: BARO
+    formation_template: ''
+    name: GARTH
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -281740.24071199
+    y: -136777.87610336
+  9:
+    ETA: 3147.9684705874
+    ETA_locked: false
+    action: Turning Point
+    alt: 4030
+    alt_type: BARO
+    formation_template: ''
+    name: FLUSH
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -331959.39652166
+    y: -134950.56780238
+  10:
+    ETA: 3437.8137563462
+    ETA_locked: false
+    action: Turning Point
+    alt: 3415
+    alt_type: BARO
+    formation_template: ''
+    name: JAYSN
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -362014.55406617
+    y: -108168.92549879
+  11:
+    ETA: 3798.5806245162
+    ETA_locked: false
+    action: Turning Point
+    alt: 4640
+    alt_type: BARO
+    formation_template: ''
+    name: STRYK
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -377691.96144395
+    y: -60578.15760223
+  12:
+    ETA: 4014.3431052549
+    ETA_locked: false
+    action: Turning Point
+    alt: 6646
+    alt_type: BARO
+    formation_template: ''
+    name: GASS PEAK
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -379927.46101919
+    y: -30694.645380085
+  13:
+    ETA: 4194.1842767309
+    ETA_locked: false
+    action: Turning Point
+    alt: 2364
+    alt_type: BARO
+    formation_template: ''
+    name: APEX
+    speed: 138.88888888889
+    speed_locked: true
+    task:
+      id: ComboTask
+      params:
+        tasks: {}
+    type: Turning Point
+    x: -384142.56043126
+    y: -6074.9287345217
